@@ -1,0 +1,118 @@
+.navbar {
+  background: #0b0b0b;
+  border-bottom: 1px solid #292929;
+}
+
+.navbar-brand {
+  color: #fff !important;
+}
+
+.navbar-brand span {
+  color: #D71920;
+}
+
+.nav-link {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #D71920 !important;
+}
+
+.signin-btn {
+  background: #D71920;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 2.5px;
+  
+}
+
+.signin-btn:hover {
+  background: #fff;
+  color: #0b0b0b;
+}
+
+/* Keep the hamburger simple */
+.navbar-toggler {
+  border: none;
+  padding: 5px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+/* Container Box Sizing */
+.hero-visual-box {
+  max-width: 750px;
+  width: 100%;
+  margin-bottom: 60px; /* Gives breathing room before hitting the wave floor edge */
+  position: relative;
+  z-index: 2; /* Keeps text and terminal layered safely above background grids */
+}
+
+/* Premium Tech Terminal Window Styling */
+.tech-dashboard-mockup {
+  background: #11141a; /* Rich dark background matching your tech academy theme */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+}
+
+.mockup-header {
+  background: #1a1f29;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Window Control Dots */
+.mockup-header .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+.mockup-header .dot.red { background: #ff5f56; }
+.mockup-header .dot.yellow { background: #ffbd2e; }
+.mockup-header .dot.green { background: #27c93f; }
+
+.mockup-title {
+  color: #8a94a6;
+  font-size: 0.85rem;
+  margin-left: 8px;
+}
+
+.mockup-body {
+  padding: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.code-line {
+  margin-bottom: 8px;
+  color: #e2e8f0;
+}
+
+.code-keyword {
+  color: #ff3344; /* NexGeda red color token for coding keyword nodes */
+}
+
+.code-string {
+  color: #4ade80; /* Eco Green formatting for text string labels */
+}
+
+/* Terminal Cursor Blink Effect Animation */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.blink-cursor {
+  color: #ff3344;
+  animation: blink 1s step-end infinite;
+}

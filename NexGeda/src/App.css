@@ -1,0 +1,16 @@
+body{
+   background-color: #0b0b0b;
+}
+@import url('https://googleapis.com');
+
+/* 2. Apply fonts to the whole website standard elements */
+body {
+  font-family: 'Inter', sans-serif; /* Everything defaults to clean Inter text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; /* All titles default to modern Montserrat */
+  font-weight: 700;
+}

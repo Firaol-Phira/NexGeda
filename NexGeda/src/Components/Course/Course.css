@@ -1,0 +1,99 @@
+/* NexGeda Academy Brand Color System */
+:root {
+  --nexgeda-red: #dc3545;       /* Vibrant brand red */
+  --nexgeda-black: #0B0B0B;     /* Dark tech black */
+  --nexgeda-white: #ffffff;     
+  
+
+  --red-low-opacity: rgba(220, 53, 70, 0.251);   
+  --black-low-opacity: rgba(15, 17, 21, 0.12);  
+}
+
+.nexgeda-courses-section .col-12 {
+  padding: 20px !important;
+}
+
+.nexgeda-courses-section .brand-highlight {
+  color: var(--nexgeda-red);
+}
+
+.nexgeda-courses-section .max-w-700 {
+  max-width: 700px;
+}
+
+/* --- BASE CARD STATE --- */
+.nexgeda-courses-section .course-card {
+  position: relative;
+  /* Card face stays crisp white just like the cards in image 1 so text is fully visible */
+  background: var(--nexgeda-white) !important; 
+  border-radius: 16px !important;
+  z-index: 1;
+  cursor: pointer;
+  border: none !important; /* Strips default Bootstrap borders that conflict with shadow layers */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.nexgeda-courses-section .course-card::before {
+  content: '';
+  position: absolute;
+  top: -12px; 
+  right: -12px; 
+  bottom: -12px; 
+  left: -12px;
+  z-index: -1;
+  border-radius: 24px;
+
+  background: linear-gradient(135deg, var(--red-low-opacity) 0%, var(--black-low-opacity) 100%) !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  border:1px solid var(--nexgeda-black);
+}
+
+/* Typography elements remain highly visible and sharp */
+.nexgeda-courses-section .card-title {
+  color: var(--nexgeda-black);
+}
+
+.nexgeda-courses-section .card-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #41484e; 
+}
+
+/* --- BASE ICON STATE --- */
+.nexgeda-courses-section .course-card .icon-wrapper {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  background: #f8f9fa; 
+  color: var(--nexgeda-black); /* Normal state uses dark black icon color */
+  border: 1px solid #e9ecef;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+
+
+
+
+.nexgeda-courses-section .course-card.is-active::before {
+  opacity: 1 !important;
+  display: block !important;
+}
+
+.nexgeda-courses-section .course-card.is-active .icon-wrapper {
+  background: var(--nexgeda-black) !important;
+  color: var(--nexgeda-red) !important;
+  border-color: var(--nexgeda-black) !important;
+}
+.text-secondary{
+    font: 1em  ;
+    font-family: "Inter", sans-serif;
+  
+}
+
+h2 ,h3 {
+    font-family: "Montserrat", sans-serif;
+}
+

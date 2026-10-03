@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Banner.css";
 // Option A: Import an image from your src folder assets
 import NG from "../../assets/NG.jpg";
@@ -30,12 +31,12 @@ function Banner() {
 
         {/* Action Button CTA Row */}
         <div className="hero-cta-group d-flex gap-3 justify-content-center mb-5">
-          <a href="#academy" className="btn-primary-red">
-            Explore Academy
+          <a href="#Courses" className="btn-primary-red">
+            Our Courses
           </a>
-          <a href="#scholarship" className="btn-secondary-outline">
-            Apply Now
-          </a>
+          <Link to="/Signin" className="btn-secondary-outline">
+            Sign in
+          </Link>
         </div>
 
         {/* 

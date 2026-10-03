@@ -1,0 +1,49 @@
+/* Auth Footer Structural Shell */
+.auth-footer {
+  background-color: #0a0505;      /* Deep black backdrop setup */
+  border-color: #2a1a1a !important; /* Crimson dark outline top border line */
+}
+
+/* Footer Brand Signature */
+.auth-footer-logo {
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.brand-red-text {
+  color: #e11d48; /* Hex code matching the brand profile layout */
+}
+
+/* Inline Legal Links Format Rules */
+.footer-links-group {
+  font-size: 14px;
+}
+
+.footer-links-group a {
+  color: #a3a3a3; /* Muted slate white color */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links-group a:hover {
+  color: #e11d48; /* Red flash highlight on cursor focus */
+}
+
+.divider-bar {
+  color: #2a1a1a; /* Visual accent divider ticks */
+  user-select: none;
+}
+
+/* Social Media Channels Section */
+.footer-social-icons a {
+  color: #a3a3a3;
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7); /* Standardizes custom colored platform emojis to look uniform */
+  transition: filter 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-social-icons a:hover {
+  filter: grayscale(0%) opacity(1); /* Brings back clean color states on hover interaction */
+  transform: scale(1.15);
+}

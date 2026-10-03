@@ -1,18 +1,31 @@
-import { useState } from 'react'
+import react, { useState } from 'react'
 import './App.css'
-import Header from './Layouts/Header/Header'
-import Home from './Pages/Home/Home'
-
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+// Layout Wrappers
+import MainLayout from "./Layouts/MainLayout/MainLayout.jsx";
+import AuthLayout from "./Layouts/AuthoLayout/AuthoLayout.jsx";
+// Pages
+import Home from "./Pages/Home/Home.jsx";
+import SignIn from "./Pages/SignIn/Sign.jsx"; 
+import ResetPassword from './Components/ResetForgate/ResetPassword.jsx';
+import SignUp from './Components/Signup/SignUp.jsx';
 
 function App() {
-  
   return (
-    <>
-    <Header/>
-    <Home/>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+        </Route>
+
+        <Route element={<AuthLayout />}>
+          <Route path="/Signin" element={<SignIn />} />
+          <Route path="/ForgotePassword" element={<ResetPassword />} />
+          <Route path="/SignUp" element={<SignUp />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App

@@ -1,0 +1,79 @@
+/* Brand Design Identity Elements */
+.nexgeda-login-container {
+  background-color: #F5F5F5; /* NexGeda background black tone */
+}
+
+/* Base element custom state rules */
+.brand-red-text {
+  color: #D71920; /* Red branding accent colors */
+}
+
+.btn-brand-red {
+  background-color: #D71920;
+  color: #ffffff;
+  transition: background-color 0.2s;
+}
+
+.btn-brand-red:hover {
+  background-color: #D71920;
+  color: #ffffff;
+}
+
+/* Background gradient styling for Left Banner block */
+.banner-overlay-graphic {
+  background: linear-gradient(180deg, rgba(225, 29, 72, 0.08) 0%, rgba(0,0,0,0) 100%);
+  border-top: 4px solid #D71920;
+  opacity: 0.8;
+}
+
+/* Clean Custom Form Focus overrides matching NexGeda inputs */
+.form-control:focus {
+  background-color: #F5F5F5 !important;
+  border-color: #D71920 !important;
+  color: #1A1A1A !important;
+  box-shadow: 0 0 0 0.25rem rgba(225, 29, 72, 0.25) !important;
+}
+
+.google-signin-btn:hover {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  color: #D71920 !important ;
+  border: 1px solid ;
+}
+
+/* Custom checkbox accent adjustment */
+.custom-checkbox {
+  accent-color: #D71920;
+}
+
+/* Divider rules styling extensions */
+.form-separator::before,
+.form-separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #2a1a1a;
+}
+/* Helper for tiny styling scales */
+.fs-7 {
+  font-size: 0.85rem;
+}
+.nexgeda-left-banner {
+  /* This blends a 70% dark black overlay over your image dynamically */
+  background-image: linear-gradient(rgba(10, 5, 5, 0.7), rgba(10, 5, 5, 0.7)), 
+                    url('../../assets/NG.jpg'); 
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.text-sign{
+  color: #FFFFFF;
+
+}
+.form-wrapper h2{
+  color: #1A1A1A;
+}
+
+.Signin:hover{
+  color: #D71920 !important;
+
+}

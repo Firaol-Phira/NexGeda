@@ -1,6 +1,6 @@
-import "./Header.css";
-
-function Header() {
+import "./MainHeader.css";
+import { Link } from "react-router-dom";
+function MainHeader() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
       <div className="container-fluid px-4">
@@ -9,12 +9,11 @@ function Header() {
           Nex<span>Geda</span>
         </a>
 
-        {/* Right side container - Formatted to lock to the far right on large screens */}
         <div className="d-flex align-items-center gap-2 order-lg-last">
-          {/* Sign In - Visually swapped so it sits on the absolute edge */}
-          <a href="#signin" className="signin-btn px-3 order-1 order-lg-last">
+         
+          <Link to="/signin" className="signin-btn px-3 order-1 order-lg-last">
             Sign In
-          </a>
+          </Link>
 
           {/* 3-line menu toggler */}
           <button
@@ -69,4 +68,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default MainHeader;

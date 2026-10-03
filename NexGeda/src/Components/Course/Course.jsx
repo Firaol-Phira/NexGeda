@@ -31,7 +31,7 @@ function Course() {
   ];
 
   return (
-    <section className="py-5 bg-dark-brand nexgeda-courses-section">
+    <section id="Courses" className=" py-5 bg-dark-brand nexgeda-courses-section">
       <div className="container">
         {/* Header Content */}
         <div className="text-center mb-5 max-w-700 mx-auto">

@@ -14,3 +14,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif; /* All titles default to modern Montserrat */
   font-weight: 700;
 }
+
+html {
+  scroll-behavior: smooth;
+  /* Adjust this value to equal your navbar's height + your desired shadow gap */
+  scroll-padding-top: 70px; 
+}

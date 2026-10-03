@@ -1,0 +1,96 @@
+/* Custom Header Styling Rules */
+.login-header-title {
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+}
+
+/* Custom Text Resizer Elements */
+.fs-7 {
+  font-size: 0.8rem !important;
+}
+
+/* Custom Styling Rules for Text Field Input Borders */
+.input-custom-box {
+  background-color: #ffffff !important;
+  color: #212529 !important;
+  border-radius: 6px !important;
+  font-size: 1rem !important;
+  padding: 12px 16px !important;
+  transition: border-color 0.15s ease-in-out;
+}
+
+.input-custom-box::placeholder {
+  color: #adb5bd;
+}
+
+.input-custom-box:focus {
+  border-color: #dc3545 !important; /* Focused input state glows with brand identity accent */
+}
+
+/* Google Framework Button Configuration settings */
+.google-register-btn {
+  border-color: #dee2e6 !important;
+  border-radius: 6px !important;
+  font-size: 0.95rem !important;
+  background-color: #ffffff;
+}
+
+.google-register-btn:hover {
+  background-color: #f8f9fa !important;
+}
+
+/* Structural Divider Segment configuration spacing rules */
+.structural-separator {
+  position: relative;
+  text-align: center;
+}
+
+.structural-separator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #e0e0e0;
+  z-index: 1;
+}
+
+.structural-separator span {
+  position: relative;
+  z-index: 2;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Solid Action Execution Control Button Styles */
+.nexgeda-action-btn {
+  background-color: #1a1a1a !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 10px 0 !important;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s ease;
+}
+
+.nexgeda-action-btn:hover {
+  opacity: 0.9;
+  background-color: #000000 !important;
+}
+
+/* Custom Text Hover Modifications */
+.hover-underline:hover {
+  text-decoration: underline !important;
+}
+
+/* Background image workspace definition mapping left graphics context */
+.nexgeda-signup-banner {
+  background-image: url('../../assets/NG.jpg'); /* Auto references your original banner asset path file */
+  background-size: cover;
+  background-position: center;
+  min-height: calc(100vh - 58px);
+}
+
+.banner-dark-overlay {
+  background: rgba(0, 0, 0, 0.45); /* Creates the clean shadow text layer contrast display matrix */
+}

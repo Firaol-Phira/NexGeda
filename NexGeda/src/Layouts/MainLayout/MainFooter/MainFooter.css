@@ -1,0 +1,68 @@
+/* Core Layout Container Design rules */
+.nexgeda-main-footer {
+  background-color: #050203;       /* Ultra deep background space tone matching the top page dark levels */
+  border-color: #1a0f11 !important; /* Soft dark crimson/charcoal accent border separator line */
+}
+
+/* Brand Headline styling rules */
+.footer-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.footer-logo span {
+  color: #e11d48; /* Red branding indicator */
+}
+
+.footer-description {
+  font-size: 14.5px;
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+/* Sub-group Heading Titles styling rules */
+.footer-section-title {
+  color: #ffffff;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* Dynamic Links List formatting standards */
+.footer-links-list li {
+  margin-bottom: 10px;
+}
+
+.footer-links-list a {
+  color: #a3a3a3; /* Calmed down slate gray */
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  display: inline-block;
+}
+
+/* Modern slight indentation shift focus animation */
+.footer-links-list a:hover {
+  color: #e11d48;
+  padding-left: 4px;
+}
+
+/* Standardized Icon adjustments */
+.footer-social-matrix a {
+  color: #a3a3a3;
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.65);
+  transition: filter 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-social-matrix a:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.18);
+}
+
+/* Utility Helpers */
+.fs-7 {
+  font-size: 0.85rem;
+}

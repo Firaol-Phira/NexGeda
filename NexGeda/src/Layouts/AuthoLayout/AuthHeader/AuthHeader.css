@@ -5,16 +5,16 @@
  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Brand Text Custom Styles */
-.auth-brand-logo {
-  color: #0B0B0B;
-  letter-spacing: -0.5px;
-  transition: opacity 0.2s ease;
+.logo {
+  width: 9rem;
 }
 
-.auth-brand-logo:hover {
-  opacity: 0.9;
+.logo img {
+  width: 100%;
+  height: auto;
 }
+
+
 
 .brand-red-text {
   color: #e11d48; /* Vibrant core brand red color */

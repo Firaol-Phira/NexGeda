@@ -1,16 +1,17 @@
 import "./MainHeader.css";
 import { Link } from "react-router-dom";
+import logo from "../../../assets/NexGedalogo-04.png"
 function MainHeader() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
       <div className="container-fluid px-4">
         {/* Logo */}
-        <a className="navbar-brand fw-bold fs-3" href="#home">
-          Nex<span>Geda</span>
+        
+        <a href="#" className="logo">
+          <img src={logo} alt="Logo" />
         </a>
 
         <div className="d-flex align-items-center gap-2 order-lg-last">
-         
           <Link to="/signin" className="signin-btn px-3 order-1 order-lg-last">
             Sign In
           </Link>
@@ -51,9 +52,9 @@ function MainHeader() {
             </li>
 
             <li className="nav-item">
-              <a className="nav-link" href="#scholarship">
+              <Link className="nav-link" to="/Scholarship">
                 Scholarship
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">

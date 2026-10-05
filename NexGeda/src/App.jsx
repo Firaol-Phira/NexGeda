@@ -12,6 +12,7 @@ import SignUp from './Components/Signup/SignUp.jsx';
 import Scholarship from './Components/ScholarshipPage/Scholarship.jsx';
 import Dashboard from './Components/Dashboard/Dashboard.jsx';
 import About from './Pages/About/About.jsx';
+import Contact from './Pages/Contact/Contact.jsx';
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/Scholarship" element={<Scholarship />} />
-          <Route path="/About" element={<About/>} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
         </Route>
 
         <Route element={<AuthLayout />}>

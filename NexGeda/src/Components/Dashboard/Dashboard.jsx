@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Dashboard.css";
 import logo from "../../assets/NexGedalogo2-04.png";
 
 function Dashboard() {
+  const location = useLocation();
+
   const [students, setStudents] = useState([]);
-  const [activeMenu, setActiveMenu] = useState("Overview");
   const [loadingError, setLoadingError] = useState("");
 
   const [currentUser, setCurrentUser] = useState({
@@ -14,7 +15,10 @@ function Dashboard() {
     avatar: "",
   });
 
-  // Load user and students
+  // ==============================
+  // LOAD USER + STUDENTS
+  // ==============================
+
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
 
@@ -49,7 +53,10 @@ function Dashboard() {
     fetchStudents();
   }, []);
 
-  // Profile image upload
+  // ==============================
+  // PROFILE IMAGE
+  // ==============================
+
   const handleAvatarFileChange = async (e) => {
     const fileBlob = e.target.files[0];
 
@@ -83,6 +90,7 @@ function Dashboard() {
         };
 
         localStorage.setItem("user", JSON.stringify(updatedUser));
+
         setCurrentUser(updatedUser);
 
         window.location.reload();
@@ -98,7 +106,10 @@ function Dashboard() {
     }
   };
 
-  // Get initials
+  // ==============================
+  // INITIALS
+  // ==============================
+
   const getInitials = (name) => {
     if (!name || name === "Loading...") {
       return "U";
@@ -112,80 +123,98 @@ function Dashboard() {
       .slice(0, 2);
   };
 
-  // Logout
+  // ==============================
+  // LOGOUT
+  // ==============================
+
   const handleLogout = () => {
     localStorage.clear();
     window.location.href = "/Signin";
   };
 
-  // Sidebar menu
+  // ==============================
+  // SIDEBAR MENU
+  // ==============================
+
   const menuItems = [
     {
       name: "Overview",
       icon: "bi-grid-1x2-fill",
+      path: "/dashboard",
     },
     {
       name: "Courses",
       icon: "bi-journal-bookmark-fill",
+      path: "/DashCourse",
     },
     {
       name: "Schedule",
       icon: "bi-calendar3",
+      path: "/dashboard/schedule",
     },
     {
       name: "Discussion",
       icon: "bi-chat-left-text-fill",
+      path: "/dashboard/discussion",
     },
     {
       name: "Leaderboard",
       icon: "bi-trophy-fill",
+      path: "/dashboard/leaderboard",
     },
     {
       name: "Settings",
       icon: "bi-gear-fill",
+      path: "/dashboard/settings",
     },
   ];
 
   return (
     <div className="container-fluid p-0 d-flex vh-100 overflow-hidden bg-light">
-      {/* SIDEBAR */}
+      {/* ==============================
+          SIDEBAR
+      ============================== */}
+
       <aside className="dashboard-sidebar bg-white border-end d-flex flex-column flex-shrink-0">
-        {/* NAVIGATION TITLE */}
+        {/* Dashboard title */}
         <div className="sidebar-dashboard-title px-3 pt-4 pb-2 d-none d-lg-block">
           Dashboard
         </div>
 
-        {/* MENU */}
+        {/* Navigation */}
         <nav className="nav nav-pills flex-column gap-1 px-2">
-          {menuItems.map((item) => (
-            <button
-              key={item.name}
-              type="button"
-              title={item.name}
-              onClick={() => setActiveMenu(item.name)}
-              className={`nav-link d-flex align-items-center justify-content-center justify-content-lg-start gap-lg-3 ${
-                activeMenu === item.name
-                  ? "bg-danger bg-opacity-10 text-danger fw-semibold"
-                  : "text-secondary"
-              }`}
-            >
-              <i className={`bi ${item.icon} fs-5`}></i>
+          {menuItems.map((item) => {
+            const active = location.pathname === item.path;
 
-              <span className="d-none d-lg-inline">{item.name}</span>
+            return (
+              <Link
+                key={item.name}
+                to={item.path}
+                title={item.name}
+                className={`nav-link d-flex align-items-center justify-content-center justify-content-lg-start gap-lg-3 ${
+                  active
+                    ? "bg-danger bg-opacity-10 text-danger fw-semibold"
+                    : "text-secondary"
+                }`}
+              >
+                <i className={`bi ${item.icon} fs-5`}></i>
 
-              {item.badge && (
-                <span className="badge bg-danger rounded-circle ms-auto d-none d-lg-inline">
-                  {item.badge}
-                </span>
-              )}
-            </button>
-          ))}
+                <span className="d-none d-lg-inline">{item.name}</span>
+              </Link>
+            );
+          })}
         </nav>
       </aside>
 
-      {/* MAIN AREA */}
+      {/* ==============================
+          MAIN AREA
+      ============================== */}
+
       <div className="flex-grow-1 d-flex flex-column overflow-hidden">
-        {/* HEADER */}
+        {/* ==============================
+            HEADER
+        ============================== */}
+
         <header className="auth-navbar navbar bg-white border-bottom shadow-sm px-3 px-md-5">
           {/* LOGO */}
           <div className="sidebar-logo d-flex align-items-center">
@@ -235,6 +264,7 @@ function Dashboard() {
                   )}
                 </div>
 
+                {/* Online indicator */}
                 <span
                   className="position-absolute bottom-0 end-0 bg-success border border-white rounded-circle"
                   style={{
@@ -244,6 +274,7 @@ function Dashboard() {
                 ></span>
               </label>
 
+              {/* File input */}
               <input
                 id="avatar-file-input"
                 type="file"
@@ -252,6 +283,7 @@ function Dashboard() {
                 onChange={handleAvatarFileChange}
               />
 
+              {/* User information */}
               <div className="d-none d-md-flex flex-column text-start lh-1">
                 <span className="fw-bold text-dark">{currentUser.name}</span>
 
@@ -274,32 +306,37 @@ function Dashboard() {
           </div>
         </header>
 
-        {/* MAIN CONTENT */}
+        {/* ==============================
+            MAIN CONTENT
+        ============================== */}
+
         <main className="flex-grow-1 overflow-auto p-3 p-md-4 p-lg-5">
           {/* PAGE TITLE */}
+
           <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-4 mb-5">
             <div className="mb-4">
-              <h1 className="display-6 mb-1">Welcome back, </h1>
+              <h1 className="display-6 mb-1">Welcome back,</h1>
+
               <span className="fw-bold display-6 text-danger">
                 {currentUser.name} 👋
               </span>
 
               <div className="mt-5">
-                {" "}
                 <p className="mb-0">
                   Your journey to becoming the next generation of leaders starts
-                  here.{" "}
+                  here.
                 </p>
+
                 <span className="txt">
-                  {" "}
                   Build.
                   <span className="txti"> Grow. </span>
                   Lead.
-                </span>{" "}
+                </span>
               </div>
             </div>
 
             {/* SEARCH + ACTIONS */}
+
             <div className="d-flex flex-column flex-sm-row gap-2">
               <div className="position-relative">
                 <i className="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
@@ -322,6 +359,7 @@ function Dashboard() {
           </div>
 
           {/* ERROR */}
+
           {loadingError && (
             <div className="alert alert-warning border-0 shadow-sm mb-4">
               {loadingError}
@@ -329,11 +367,13 @@ function Dashboard() {
           )}
 
           {/* STUDENT GRID */}
+
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4">
             {students.map((student) => (
               <div key={student.id} className="col">
                 <div className="card h-100 bg-white border-0 shadow-sm rounded-3 p-4 text-center">
                   {/* AVATAR */}
+
                   <div className="position-relative mx-auto mb-3">
                     <img
                       src={student.avatar}
@@ -357,34 +397,45 @@ function Dashboard() {
                   </div>
 
                   {/* NAME */}
+
                   <h3 className="h5 fw-bold text-dark mb-3">{student.name}</h3>
 
-                  {/* XP + LEVEL */}
-                  <p className="mb-1 small text-muted  font-monospace text-uppercase">
+                  {/* DEPARTMENT */}
+
+                  <p className="mb-1 small text-muted font-monospace text-uppercase">
                     {student.dep}
                   </p>
-                  <p className="small text-muted mb-4  font-monospace text-uppercase">
+
+                  {/* YEAR */}
+
+                  <p className="small text-muted mb-4 font-monospace text-uppercase">
                     {student.year}
                   </p>
+
                   {/* STATS */}
+
                   <div className="row g-0 border-top border-bottom py-3 mb-4">
                     <div className="col-4 border-end">
                       <h4 className="fw-bold m-0 fs-5">{student.joined}</h4>
+
                       <small className="text-muted">Joined</small>
                     </div>
 
                     <div className="col-4 border-end">
                       <h4 className="fw-bold m-0 fs-5">{student.finished}</h4>
+
                       <small className="text-muted">Finished</small>
                     </div>
 
                     <div className="col-4">
                       <h4 className="fw-bold m-0 fs-5">{student.onGoing}</h4>
+
                       <small className="text-muted">On Going</small>
                     </div>
                   </div>
 
-                  {/* VIEW PROFILE */}
+                  {/* PROFILE */}
+
                   <button className="btn btn-primary w-100 fw-semibold">
                     View Profile
                   </button>

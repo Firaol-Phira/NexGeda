@@ -1,0 +1,458 @@
+/* ==============================
+   ABOUT SECTION
+============================== */
+
+.about-section {
+  margin-top: 3rem;
+  padding: 100px 0;
+  background: #ffffff;
+  color: #111111;
+}
+
+
+/* ==============================
+   LABEL
+============================== */
+
+.about-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #e31b23;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.about-label span {
+  width: 25px;
+  height: 2px;
+  background: #e31b23;
+}
+
+
+/* ==============================
+   INTRO
+============================== */
+
+.about-title {
+  margin: 25px 0;
+
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.about-title span,
+.approach-title span,
+.founder-title span {
+  color: #e31b23;
+}
+
+.about-intro {
+  max-width: 800px;
+  margin: auto;
+
+  font-size: 20px;
+  line-height: 1.7;
+  color: #333333;
+}
+
+.about-text {
+  color: #777777;
+  line-height: 1.8;
+}
+
+
+/* ==============================
+   LEARNING CARDS
+============================== */
+
+.learning-card {
+  padding: 32px;
+
+  border: 1px solid #e8e8e8;
+  border-radius: 18px;
+
+  background: #ffffff;
+
+  transition: 0.3s ease;
+}
+
+.learning-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #e31b23;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.learning-icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #111111;
+  color: #ffffff;
+
+  font-size: 24px;
+}
+
+.learning-card:hover .learning-icon {
+  background: #e31b23;
+}
+
+.learning-number {
+  color: #cccccc;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.learning-card h3 {
+  margin: 25px 0 12px;
+
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.learning-card p {
+  color: #777777;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.learning-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  margin-top: 20px;
+}
+
+.learning-tags span {
+  padding: 6px 10px;
+
+  background: #f4f4f4;
+  border-radius: 20px;
+
+  color: #555555;
+  font-size: 11px;
+}
+
+
+/* ==============================
+   APPROACH
+============================== */
+
+.approach-section {
+  margin-top:25px !important ;
+}
+
+.section-label {
+  color: #e31b23;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.approach-title {
+  margin: 15px 0 25px;
+
+  font-size: 45px;
+  font-weight: 800;
+}
+
+
+/* APPROACH ITEMS */
+
+.approach-item {
+  padding: 18px;
+
+  background: #f7f7f7;
+  border-radius: 12px;
+}
+
+.approach-item i {
+  color: #e31b23;
+  font-size: 20px;
+}
+
+.approach-item h5 {
+  margin: 10px 0 5px;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.approach-item p {
+  margin: 0;
+
+  color: #888888;
+  font-size: 12px;
+}
+
+
+/* ==============================
+   VISUAL
+============================== */
+
+.about-visual {
+  position: relative;
+
+  min-height: 450px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 22px;
+
+  background: #0b0b0b;
+}
+
+.visual-grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.1;
+
+  background-image:
+    linear-gradient(#ffffff 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff 1px, transparent 1px);
+
+  background-size: 40px 40px;
+}
+
+.visual-content {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+}
+
+.visual-content > span {
+  color: #e31b23;
+  font-size: 30px;
+}
+
+.visual-content h3 {
+  margin-top: 15px;
+
+  color: #ffffff;
+
+  font-size: 55px;
+  font-weight: 800;
+
+  line-height: 0.95;
+}
+
+.visual-content h3 strong {
+  color: #e31b23;
+}
+
+.visual-content p {
+  margin-top: 25px;
+
+  color: #888888;
+
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.code-box {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+
+  padding: 12px 16px;
+
+  background: #171717;
+  border: 1px solid #292929;
+  border-radius: 8px;
+
+  color: #cccccc;
+
+  font-family: monospace;
+  font-size: 12px;
+}
+
+.code-box span {
+  color: #e31b23;
+}
+
+.code-box strong {
+  color: #ffffff;
+}
+
+
+/* ==============================
+   FOUNDER
+============================== */
+
+.founder-section {
+  margin-top: 120px;
+}
+
+.founder-title {
+  margin-top: 20px;
+
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.founder-card {
+  padding: 45px;
+
+  background: #0b0b0b;
+
+  border-radius: 22px;
+
+  color: #ffffff;
+}
+
+.founder-image {
+  width: 210px;
+  height: 250px;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 15px;
+
+  background: #171717;
+
+  color: #555555;
+
+  font-size: 65px;
+}
+
+.founder-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.founder-role {
+  color: #e31b23;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.founder-name {
+  margin: 12px 0 18px;
+
+  font-size: 38px;
+  font-weight: 800;
+}
+
+.founder-bio {
+  max-width: 600px;
+
+  color: #aaaaaa;
+
+  line-height: 1.8;
+}
+
+.founder-line {
+  width: 50px;
+  height: 2px;
+
+  margin: 25px 0;
+
+  background: #e31b23;
+}
+
+.founder-quote {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #dddddd;
+
+  font-size: 14px;
+  font-style: italic;
+}
+
+.founder-quote i {
+  color: #e31b23;
+  font-size: 24px;
+}
+
+
+/* ==============================
+   CTA
+============================== */
+
+.about-cta {
+  margin-top: 120px;
+  padding: 70px 25px;
+
+  background: #f5f5f5;
+
+  border-radius: 22px;
+}
+
+.about-cta > span {
+  color: #e31b23;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.about-cta h2 {
+  margin: 18px auto;
+
+  max-width: 700px;
+
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.about-cta strong {
+  color: #e31b23;
+}
+
+.about-cta p {
+  color: #777777;
+}
+
+.cta-button {
+  margin-top: 12px;
+
+  padding: 12px 25px;
+
+  background: #e31b23;
+  border: 1px solid #e31b23;
+  border-radius: 30px;
+
+  color: #ffffff;
+
+  font-weight: 600;
+}
+
+.cta-button:hover {
+  background: #111111;
+  border-color: #111111;
+  color: #ffffff;
+}

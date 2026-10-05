@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./ResetPassword.css";
-
+import { Link,  } from "react-router-dom";
 function ResetPassword(){
   const [email, setEmail] = useState("");
 
@@ -73,12 +73,12 @@ function ResetPassword(){
             <div className="mt-4 small d-flex flex-column gap-2">
               <p className="m-0 text-muted">
                 Already have an account?{" "}
-                <a
-                  href="/login"
+                <Link
+                  to="/signin"
                   className="text-brand-red text-decoration-none fw-medium link-hover"
                 >
-                  Log in
-                </a>
+                  Sign in
+                </Link>
               </p>
               <p className="m-0 text-muted">
                 Don't have an account?{" "}

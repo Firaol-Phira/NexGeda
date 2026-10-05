@@ -3,7 +3,7 @@ import "./Scholarship.css";
 import Scho from "../../assets/Scho.PNG"
 function Scholarship() {
   return (
-    <section className="scholarship-section py-5">
+    <section className="scholarshipSection py-5">
       <div className="container py-lg-5">
         <div className="row align-items-center g-5">
           <div className="scholarship-heading text-center">

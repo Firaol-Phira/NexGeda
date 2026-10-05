@@ -1,0 +1,237 @@
+.why-nexgeda {
+  background: #fff;
+  color: #0b0b0b;
+
+}
+
+/* Header */
+
+.why-label {
+  color: #d71920;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.why-title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.why-title span {
+  color: #d71920;
+}
+
+.why-intro {
+  color: #5b5959;
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+
+/* Dark Section */
+
+.why-dark {
+  background: #fff;
+  color: #fff;
+}
+
+
+/* Feature */
+
+.why-feature {
+  position: relative;
+  overflow: hidden;
+  padding: 2.5rem;
+  background: #111;
+  border: 1px solid #292929;
+  border-radius: 18px;
+}
+
+.why-feature::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: #d71920;
+  opacity: 0.08;
+  right: -100px;
+  bottom: -120px;
+}
+
+.feature-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d71920;
+  border-radius: 14px;
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+}
+
+.feature-label {
+  color: #d3d3d3;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.feature-content {
+  position: relative;
+  z-index: 1;
+}
+
+.why-feature h3 {
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  line-height: 0.95;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin: 0.8rem 0 1.5rem;
+}
+
+.why-feature h3 span {
+  color: #d71920;
+}
+
+.why-feature p {
+  color: #d3d3d3;
+  line-height: 1.8;
+  max-width: 450px;
+}
+
+.feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 2rem;
+}
+
+.feature-tags span {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #333;
+  border-radius: 30px;
+  color: #d3d3d3;
+  font-size: 0.75rem;
+}
+
+
+/* Reason Cards */
+
+.reason-card {
+  padding: 1.7rem;
+  background: #151515;
+  border: 1px solid #292929;
+  border-radius: 15px;
+  transition: 0.3s ease;
+}
+
+.reason-card:hover {
+  transform: translateY(-5px);
+  border-color: #d71920;
+}
+
+.reason-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.8rem;
+}
+
+.reason-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d71920;
+  color: #fff;
+  border-radius: 11px;
+}
+
+.reason-number {
+  color: #d3d3d3;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.reason-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.reason-card p {
+  color: #d3d3d3;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  margin-bottom: 1.4rem;
+}
+
+.reason-arrow {
+  color: #d3d3d3;
+  transition: 0.3s ease;
+}
+
+.reason-card:hover .reason-arrow {
+  color: #d71920;
+  transform: translate(3px, -3px);
+}
+
+
+/* Bottom CTA */
+
+.why-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.7rem 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.why-bottom span {
+  color: #d71920;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.why-bottom h4 {
+  margin: 0.4rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.why-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 1.3rem;
+  background: #d71920;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.why-btn:hover {
+  background: #b9151b;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.why-btn i {
+  transition: 0.3s ease;
+}
+
+.why-btn:hover i {
+  transform: translateX(4px);
+}

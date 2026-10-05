@@ -39,7 +39,7 @@ function SignUp() {
 
         // Return to sign in view automatically after a 2 second delay window
         setTimeout(() => {
-          navigate("/login");
+          navigate("/signin");
         }, 2000);
       } else {
         setErrorMessage(
@@ -194,10 +194,10 @@ function SignUp() {
               <div className="text-center mt-4 text-muted fs-6">
                 Already have an Account?{" "}
                 <Link
-                  to="/login"
+                  to="/signin"
                   className="text-danger text-decoration-none fw-bold ms-1 hover-underline"
                 >
-                  Sign up
+                  Sign in
                 </Link>
               </div>
             </div>

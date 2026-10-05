@@ -1,0 +1,271 @@
+/* ==============================
+   FOUNDER SECTION
+============================== */
+
+.home-founder {
+  padding: 100px 0;
+  background: #ffffff;
+  color: #111111;
+}
+
+
+/* LABEL */
+
+.home-founder-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #d71920;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.home-founder-label span {
+  width: 25px;
+  height: 2px;
+  background: #d71920;
+}
+
+
+/* TITLE */
+
+.home-founder-title {
+  margin: 20px 0;
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.home-founder-title span {
+  color: #d71920;
+}
+
+.home-founder-intro {
+  max-width: 650px;
+  margin: auto;
+  color: #5b5959;
+  line-height: 1.8;
+}
+
+
+/* ==============================
+   FOUNDER CARD
+============================== */
+
+.home-founder-card {
+  padding: 45px;
+  background: #0b0b0b;
+  border-radius: 22px;
+  color: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+
+.home-founder-card::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #d71920;
+  opacity: 0.06;
+  right: -150px;
+  bottom: -170px;
+}
+
+
+/* IMAGE */
+
+.home-founder-image {
+  width: 210px;
+  height: 250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #171717;
+  border: 1px solid #292929;
+  color: #555555;
+  font-size: 65px;
+}
+
+.home-founder-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* INFORMATION */
+
+.home-founder-role {
+  color: #d71920;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.home-founder-name {
+  margin: 12px 0 18px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+}
+
+.home-founder-bio {
+  max-width: 600px;
+  color: #d3d3d3;
+  line-height: 1.8;
+}
+
+.home-founder-line {
+  width: 50px;
+  height: 2px;
+  margin: 25px 0;
+  background: #d71920;
+}
+
+
+/* QUOTE */
+
+.home-founder-quote {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #d3d3d3;
+}
+
+.home-founder-quote i {
+  color: #d71920;
+  font-size: 25px;
+}
+
+.home-founder-quote p {
+  margin: 0;
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+
+/* LINK */
+
+.founder-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 25px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.founder-link i {
+  color: #d71920;
+  transition: 0.3s ease;
+}
+
+.founder-link:hover {
+  color: #d71920;
+}
+
+.founder-link:hover i {
+  transform: translateX(5px);
+}
+
+
+/* ==============================
+   CTA
+============================== */
+
+.home-cta {
+    border-radius: 22px;
+  padding: 100px 0;
+  background: #f5f5f5;
+}
+
+.home-cta-content {
+  margin: auto;
+}
+
+.home-cta-label {
+  color: #d71920;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.home-cta h2 {
+  margin: 18px auto;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.home-cta h2 strong {
+  color: #d71920;
+}
+
+.home-cta p {
+  color: #5b5959;
+  margin-bottom: 25px;
+}
+
+
+/* PRIMARY BUTTON */
+
+.home-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 25px;
+  background: #d71920;
+  border: 1px solid #d71920;
+  border-radius: 30px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.home-cta-button:hover {
+  background: #111111;
+  border-color: #111111;
+  color: #ffffff;
+}
+
+.home-cta-button i {
+  transition: 0.3s ease;
+}
+
+.home-cta-button:hover i {
+  transform: translateX(4px);
+}
+
+
+/* SECONDARY BUTTON */
+
+.home-cta-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 25px;
+  background: transparent;
+  border: 1px solid #5b5959;
+  border-radius: 30px;
+  color: #111111;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.home-cta-outline:hover {
+  background: #111111;
+  border-color: #111111;
+  color: #ffffff;
+}

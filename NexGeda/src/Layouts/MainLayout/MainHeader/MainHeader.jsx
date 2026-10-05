@@ -1,13 +1,11 @@
 import "./MainHeader.css";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/NexGedalogo-04.png"
+import logo from "../../../assets/NexGedalogo-04.png";
 function MainHeader() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
       <div className="container-fluid px-4">
-        {/* Logo */}
-        
-        <a href="#" className="logo">
+        <a href="#home" className="navbar-brand logo">
           <img src={logo} alt="Logo" />
         </a>
 
@@ -34,16 +32,12 @@ function MainHeader() {
         <div className="collapse navbar-collapse" id="mainNavbar">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
             <li className="nav-item">
-              <a className="nav-link " href="#home">
+              <Link className="nav-link " to="/">
                 Home
-              </a>
+              </Link>
             </li>
 
-            <li className="nav-item">
-              <a className="nav-link" href="#about">
-                About
-              </a>
-            </li>
+           
 
             <li className="nav-item">
               <a className="nav-link" href="#academy">
@@ -56,7 +50,11 @@ function MainHeader() {
                 Scholarship
               </Link>
             </li>
-
+ <li className="nav-item">
+              <Link className="nav-link" to="/About">
+                About Us
+              </Link>
+            </li>
             <li className="nav-item">
               <a className="nav-link" href="#contact">
                 Contact

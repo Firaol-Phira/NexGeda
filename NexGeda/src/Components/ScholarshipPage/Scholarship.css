@@ -2,7 +2,9 @@
    NEXGEDA SCHOLARSHIP SECTION
 ================================ */
 
-.scholarship-section {
+.scholarshipSection {
+margin-top:9rem;
+ position: relative;
   background: #ffffff;
   color: #111111;
 }

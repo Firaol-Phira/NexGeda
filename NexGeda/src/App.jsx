@@ -11,6 +11,7 @@ import ResetPassword from './Components/ResetForgate/ResetPassword.jsx';
 import SignUp from './Components/Signup/SignUp.jsx';
 import Scholarship from './Components/ScholarshipPage/Scholarship.jsx';
 import Dashboard from './Components/Dashboard/Dashboard.jsx';
+import About from './Pages/About/About.jsx';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/Scholarship" element={<Scholarship />} />
+          <Route path="/About" element={<About/>} />
         </Route>
 
         <Route element={<AuthLayout />}>

@@ -40,9 +40,9 @@ function MainHeader() {
            
 
             <li className="nav-item">
-              <a className="nav-link" href="#academy">
+              <Link className="nav-link" to="/Academy">
                 Academy
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">

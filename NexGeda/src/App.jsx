@@ -14,6 +14,7 @@ import Dashboard from './Components/Dashboard/Dashboard.jsx';
 import About from './Pages/About/About.jsx';
 import Contact from './Pages/Contact/Contact.jsx';
 import Course from './Components/DashCourse/DashCourse.jsx';
+import Academy from './Pages/Academy/Academy.jsx';
 
 
 function App() {
@@ -25,16 +26,16 @@ function App() {
           <Route path="/Scholarship" element={<Scholarship />} />
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/Academy" element={<Academy />} />
         </Route>
 
         <Route element={<AuthLayout />}>
           <Route path="/Signin" element={<SignIn />} />
           <Route path="/ForgotePassword" element={<ResetPassword />} />
-          <Route path="/SignUp" element={<SignUp />} /><Route path="/DashCourse" element={<Course />} />
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/DashCourse" element={<Course />} />
         </Route>
         <Route path="/dashboard" element={<Dashboard />} />
-       
-        
       </Routes>
     </BrowserRouter>
   );

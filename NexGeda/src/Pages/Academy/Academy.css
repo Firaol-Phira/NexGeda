@@ -1,0 +1,345 @@
+.academy-section {
+  background: #fff;
+  color: #111;
+  padding: 90px 0;
+}
+
+/* INTRO */
+
+.academy-intro {
+  max-width: 850px;
+}
+
+.academy-label {
+  color: #ed1c24;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.academy-label span {
+  display: inline-block;
+  width: 32px;
+  height: 2px;
+  background: #ed1c24;
+  margin: 0 10px;
+}
+
+.academy-intro h2 {
+  font-size: 52px;
+  font-weight: 800;
+  margin: 25px 0;
+}
+
+.academy-intro h2 span {
+  color: #ed1c24;
+}
+
+.academy-intro p,
+.section-heading p {
+  color: #666;
+  font-size: 17px;
+}
+
+/* PROGRAMS */
+
+.academy-programs {
+  margin-top: 90px;
+}
+
+.academy-programs h3,
+.learning-path h3 {
+  font-weight: 800;
+}
+
+/*
+  Major courses always stay vertical.
+  Each program-card is one complete major course.
+*/
+
+.program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.program-card {
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 18px;
+  background: #fff;
+}
+
+/* COURSE SECTION */
+
+.course-section {
+  padding-right: 20px;
+}
+
+.program-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.program-top > span {
+  color: #bbb;
+  font-weight: 700;
+}
+
+.program-icon {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  color: #fff;
+  border-radius: 14px;
+  font-size: 27px;
+}
+
+.program-card h5 {
+  margin-top: 25px;
+  font-weight: 700;
+}
+
+.program-card p {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* EXPLORE */
+
+.explore-btn {
+  margin-top: 10px;
+  border: 0;
+  background: #111;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.explore-btn:hover {
+  background: #ed1c24;
+  color: #fff;
+}
+
+/* PRICE SECTION */
+
+.price-section {
+  padding: 25px;
+  background: #111;
+  color: #fff;
+  border-radius: 14px;
+}
+
+.price-title {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.price-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px;
+  background: #fff;
+  color: #111;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.price-item small {
+  display: block;
+  color: #777;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.price-item strong {
+  display: block;
+  color: #ed1c24;
+  font-size: 18px;
+}
+
+.price-item i {
+  color: #ed1c24;
+  font-size: 22px;
+}
+
+.class-price {
+  margin-bottom: 0;
+}
+
+.class-price strong {
+  color: #111;
+}
+
+/* LEARNING PATH */
+
+.learning-path {
+  margin-top: 100px;
+}
+
+.path-card {
+  height: 100%;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.path-card span {
+  color: #ed1c24;
+  font-weight: 700;
+}
+
+.path-card h5 {
+  margin-top: 25px;
+  font-weight: 700;
+}
+
+.path-card p {
+  color: #777;
+  font-size: 14px;
+}
+
+/* CTA */
+
+.academy-cta {
+  margin-top: 100px;
+  padding: 55px 20px;
+  background: #111;
+  color: #fff;
+  border-radius: 18px;
+}
+
+.academy-cta h3 {
+  font-weight: 800;
+}
+
+.academy-cta p {
+  color: #aaa;
+}
+
+.register-btn {
+  display: inline-block;
+  background: #ed1c24;
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-btn:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* COURSE PANEL */
+
+.course-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1040;
+}
+
+.course-panel {
+  position: fixed;
+  top: 0;
+  right: -450px;
+  width: 450px;
+  height: 100vh;
+  padding: 30px;
+  background: #fff;
+  overflow-y: auto;
+  z-index: 1050;
+  border-left: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.course-panel.show {
+  right: 0;
+}
+
+.course-panel small {
+  color: #ed1c24;
+  font-weight: 700;
+}
+
+.course-panel p {
+  color: #777;
+}
+
+.close-btn {
+  border: 0;
+  background: #111;
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 6px;
+}
+
+.minor-course {
+  display: flex;
+  gap: 15px;
+  padding: 18px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.minor-course > span {
+  color: #ed1c24;
+  font-weight: 700;
+}
+
+.minor-course h6 {
+  font-weight: 700;
+}
+
+.minor-course p {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.register-course {
+  display: inline-block;
+  border: 0;
+  background: #111;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.register-course:hover {
+  background: #ed1c24;
+  color: #fff;
+}
+
+.pay-now-btn {
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  padding: 11px 16px;
+  background: #ed1c24;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pay-now-btn:hover {
+  background: #fff;
+  color: #ed1c24;
+}

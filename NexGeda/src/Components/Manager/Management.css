@@ -1,12 +1,14 @@
 .management-section {
   background: #f7f7f7;
   min-height: 100vh;
+  margin-top: 75px;
 }
 
 .management-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 20px;
 }
 
 .management-header small {

@@ -1,0 +1,160 @@
+.payment-page {
+  background: #fff;
+  min-height: 100vh;
+  color: #111;
+  margin-top: 100px;
+}
+
+.payment-label {
+  color: #e31b23;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.payment-label span {
+  width: 25px;
+  height: 1px;
+  background: #e31b23;
+}
+
+.payment-title {
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.payment-title span {
+  color: #e31b23;
+}
+
+.payment-subtitle {
+  color: #777;
+}
+
+.payment-card {
+  max-width: 700px;
+  background: #111;
+  color: #fff;
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.course-header small,
+.payment-account small {
+  color: #999;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.course-header h3 {
+  font-size: 24px;
+  margin: 5px 0 0;
+  font-weight: 700;
+}
+
+.course-price {
+  color: #d71920;
+  font-size: 24px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.course-price h5{
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.course-price span {
+  color: #aaa;
+  font-size: 13px;
+}
+
+.payment-card hr {
+  border-color: #333;
+  margin: 25px 0;
+}
+
+.payment-account {
+  background: #fff;
+  color: #111;
+  border-radius: 10px;
+  padding: 18px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.payment-account strong {
+  display: block;
+  margin-top: 4px;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.instructions p {
+  color: #ccc;
+  margin: 0;
+}
+
+.instructions span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 25px;
+  height: 25px;
+
+  margin-right: 10px;
+
+  background: #e31b23;
+  border-radius: 50%;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.send-screenshot {
+  display: block;
+  text-align: center;
+
+  background: #e31b23;
+  color: #fff;
+
+  padding: 12px;
+  margin-top: 25px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.send-screenshot:hover {
+  background: #fff;
+  color: #e31b23;
+}
+
+.payment-note {
+  color: #888;
+  font-size: 12px;
+  text-align: center;
+  margin: 15px 0 0;
+}

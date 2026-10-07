@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+"react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import "./SignUp.css"; // Dedicated styles for this theme configuration
 
 function SignUp() {
@@ -8,6 +9,9 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+
+  const [searchParams] = useSearchParams();
+  const redirect = searchParams.get("redirect");
   // Feedback states for backend data communication pipelines
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -29,23 +33,25 @@ function SignUp() {
 
       const data = await response.json();
 
-      if (response.ok) {
-        setSuccessMessage(
-          "Account created successfully! Redirecting to login...",
-        );
-        setUsername("");
-        setEmail("");
-        setPassword("");
+ if (response.ok) {
+   setSuccessMessage("Account created successfully! Redirecting to login...");
 
-        // Return to sign in view automatically after a 2 second delay window
-        setTimeout(() => {
-          navigate("/signin");
-        }, 2000);
-      } else {
-        setErrorMessage(
-          data.message || "Registration failed. Please check your data.",
-        );
-      }
+   setUsername("");
+   setEmail("");
+   setPassword("");
+
+   setTimeout(() => {
+     navigate(
+       redirect
+         ? `/SignIn?redirect=${encodeURIComponent(redirect)}`
+         : "/SignIn",
+     );
+   }, 2000);
+ } else {
+   setErrorMessage(
+     data.message || "Registration failed. Please check your data.",
+   );
+ }
     } catch (err) {
       setErrorMessage(
         "Cannot connect to server. Ensure your backend is running on port 2123.",
@@ -57,7 +63,6 @@ function SignUp() {
   return (
     <div className="nexgeda-page-wrapper min-vh-100 d-flex flex-column bg-white text-dark">
       {/* TOP NAVIGATION HEADER LAYER */}
-   
 
       {/* CORE WORKSPACE ENTRY GRID LAYOUT */}
       <main className="container-fluid flex-grow-1 p-0 d-flex flex-column flex-md-row">
@@ -194,7 +199,11 @@ function SignUp() {
               <div className="text-center mt-4 text-muted fs-6">
                 Already have an Account?{" "}
                 <Link
-                  to="/signin"
+                  to={
+                    redirect
+                      ? `/SignIn?redirect=${encodeURIComponent(redirect)}`
+                      : "/SignIn"
+                  }
                   className="text-danger text-decoration-none fw-bold ms-1 hover-underline"
                 >
                   Sign in

@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Added useNavigate for dashboard routing
+import { Link,
+   useNavigate, 
+   useSearchParams} from "react-router-dom"; // Added useNavigate for dashboard routing
 import "./Sign.css"; // Import the cleaned-up global style rules
 import NG from "../../assets/NG.jpg";
 
 function Sign() {
+  const [searchParams] = useSearchParams();
+ 
+
+  const redirect = searchParams.get("redirect");
   const [email, setEmail] = useState(""); // Track email state
   const [password, setPassword] = useState(""); // Track password state
   const [showPassword, setShowPassword] = useState(false);
@@ -28,21 +34,80 @@ function Sign() {
 
       const data = await response.json();
 
-      if (response.ok) {
-        console.log("Login Success! Token generated:", data.token);
+if (response.ok) {
+  localStorage.setItem("token", data.token);
+  localStorage.setItem("user", JSON.stringify(data.user));
 
-        // Save auth data locally to preserve user session
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("user", JSON.stringify(data.user));
+  // Check whether the user came from Pay Now
+if (response.ok) {
+  localStorage.setItem("token", data.token);
+  localStorage.setItem("user", JSON.stringify(data.user));
 
-        // Advance user to the main page or dashboard view
-        navigate("/dashboard");
-      } else {
-        // Forward validation failure responses from the MySQL check logic
-        setErrorMessage(
-          data.message || "Invalid email or password connection.",
-        );
+  // Check whether the user came from Pay Now
+  if (redirect) {
+    const paymentMatch = redirect.match(/^\/Payment\/(\d+)$/);
+
+    if (paymentMatch) {
+      const courseId = paymentMatch[1];
+
+      try {
+        await fetch("http://localhost:2123/api/user/course", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${data.token}`,
+          },
+          body: JSON.stringify({
+            userId: data.user.id,
+            courseId: courseId,
+          }),
+        });
+      } catch (error) {
+        console.error("Failed to save selected course:", error);
       }
+    }
+
+    navigate(redirect, { replace: true });
+    return;
+  }
+if (data.user.role === "manager") {
+  navigate("/Management", { replace: true });
+  return;
+}
+  // Normal login
+  if (data.user.payment_status === "paid") {
+    navigate("/dashboard", { replace: true });
+    return;
+  }
+
+  if (data.user.course_id) {
+    navigate(`/Payment/${data.user.course_id}`, {
+      replace: true,
+    });
+    return;
+  }
+
+  navigate("/Academy", { replace: true });
+}
+
+  // Normal login
+  if (data.user.payment_status === "paid") {
+    navigate("/dashboard", { replace: true });
+    return;
+  }
+
+  if (data.user.course_id) {
+    navigate(`/Payment/${data.user.course_id}`, {
+      replace: true,
+    });
+    return;
+  }
+
+  navigate("/Academy", { replace: true });
+} else {
+  // Forward validation failure responses from the MySQL check logic
+  setErrorMessage(data.message || "Invalid email or password connection.");
+}
     } catch (err) {
       setErrorMessage(
         "Cannot reach server. Verify your backend is running on port 2123.",
@@ -194,7 +259,11 @@ function Sign() {
               <div className="text-center mt-4 text-secondary">
                 Don't have an Account?{" "}
                 <Link
-                  to="/SignUp"
+                  to={
+                    redirect
+                      ? `/SignUp?redirect=${encodeURIComponent(redirect)}`
+                      : "/SignUp"
+                  }
                   className="brand-red-text text-decoration-none fw-bold"
                 >
                   Sign up

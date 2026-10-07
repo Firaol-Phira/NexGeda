@@ -15,6 +15,8 @@ import About from './Pages/About/About.jsx';
 import Contact from './Pages/Contact/Contact.jsx';
 import Course from './Components/DashCourse/DashCourse.jsx';
 import Academy from './Pages/Academy/Academy.jsx';
+import Payment from './Components/Payment/Payment.jsx';
+import Management from './Components/Manager/Management.jsx';
 
 
 function App() {
@@ -27,6 +29,7 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Academy" element={<Academy />} />
+          <Route path="/Payment/:courseId" element={<Payment />} />
         </Route>
 
         <Route element={<AuthLayout />}>
@@ -34,6 +37,7 @@ function App() {
           <Route path="/ForgotePassword" element={<ResetPassword />} />
           <Route path="/SignUp" element={<SignUp />} />
           <Route path="/DashCourse" element={<Course />} />
+          <Route path="/Management" element={<Management />} />
         </Route>
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>

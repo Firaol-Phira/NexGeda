@@ -11,7 +11,7 @@
 }
 
 .academy-label {
-  color: #ed1c24;
+  color: #d71920;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 3px;
@@ -21,7 +21,7 @@
   display: inline-block;
   width: 32px;
   height: 2px;
-  background: #ed1c24;
+  background: #d71920;
   margin: 0 10px;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .academy-intro h2 span {
-  color: #ed1c24;
+  color: #d71920;
 }
 
 .academy-intro p,
@@ -123,7 +123,7 @@
 }
 
 .explore-btn:hover {
-  background: #ed1c24;
+  background: #d71920;
   color: #fff;
 }
 
@@ -166,12 +166,12 @@
 
 .price-item strong {
   display: block;
-  color: #ed1c24;
+  color: #d71920;
   font-size: 18px;
 }
 
 .price-item i {
-  color: #ed1c24;
+  color: #d71920;
   font-size: 22px;
 }
 
@@ -197,7 +197,7 @@
 }
 
 .path-card span {
-  color: #ed1c24;
+  color: #d71920;
   font-weight: 700;
 }
 
@@ -231,7 +231,7 @@
 
 .register-btn {
   display: inline-block;
-  background: #ed1c24;
+  background: #d71920;
   color: #fff;
   padding: 12px 22px;
   border-radius: 6px;
@@ -272,7 +272,7 @@
 }
 
 .course-panel small {
-  color: #ed1c24;
+  color: #d71920;
   font-weight: 700;
 }
 
@@ -296,7 +296,7 @@
 }
 
 .minor-course > span {
-  color: #ed1c24;
+  color: #d71920;
   font-weight: 700;
 }
 
@@ -321,7 +321,7 @@
 }
 
 .register-course:hover {
-  background: #ed1c24;
+  background: #d71920;
   color: #fff;
 }
 
@@ -330,7 +330,7 @@
   width: 100%;
   margin-top: 15px;
   padding: 11px 16px;
-  background: #ed1c24;
+  background: #d71920;
   color: #fff;
   text-align: center;
   border-radius: 6px;
@@ -341,5 +341,5 @@
 
 .pay-now-btn:hover {
   background: #fff;
-  color: #ed1c24;
+  color: #d71920;
 }

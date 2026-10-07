@@ -11,35 +11,57 @@ function DashCourse() {
   const [minorLoading, setMinorLoading] = useState(false);
   const [error, setError] = useState("");
 
-  // Get major courses
+  // ==========================================
+  // GET ONLY THE LOGGED-IN STUDENT'S COURSE
+  // ==========================================
+
   useEffect(() => {
-    const getCourses = async () => {
+    const getStudentCourses = async () => {
       try {
         setLoading(true);
         setError("");
 
-        const response = await fetch(`${API}/api/courses`);
+        const storedUser = localStorage.getItem("user");
+        if (!storedUser) {
+          setError("No user session found. Please sign in.");
+          setLoading(false);
+          return;
+        }
+
+        const userObj = JSON.parse(storedUser);
+        const studentId = userObj?.id;
+
+        if (!studentId) {
+          setError("Invalid user session. Please sign in again.");
+          setLoading(false);
+          return;
+        }
+
+        const response = await fetch(
+          `${API}/api/students/${studentId}/courses`,
+        );
 
         if (!response.ok) {
           throw new Error(`Server error: ${response.status}`);
         }
 
         const data = await response.json();
-
-        console.log("Courses:", data);
         setCourses(data);
       } catch (error) {
         console.error("Course fetch error:", error);
-        setError("Cannot connect to the course server.");
+        setError("Cannot load your assigned courses.");
       } finally {
         setLoading(false);
       }
     };
 
-    getCourses();
+    getStudentCourses();
   }, []);
 
-  // Get minor courses
+  // ==========================================
+  // GET MINOR COURSES
+  // ==========================================
+
   const openCourse = async (course) => {
     setSelected(course);
     setMinorCourses([]);
@@ -55,8 +77,6 @@ function DashCourse() {
       }
 
       const data = await response.json();
-
-      console.log("Minor courses:", data);
       setMinorCourses(data);
     } catch (error) {
       console.error("Minor course error:", error);
@@ -71,6 +91,7 @@ function DashCourse() {
   };
 
   const getIcon = (title) => {
+    if (!title) return "bi-book";
     if (title.includes("Full-Stack")) return "bi-code-slash";
     if (title.includes("Mobile")) return "bi-phone";
     if (title.includes("UI/UX")) return "bi-palette";
@@ -82,18 +103,17 @@ function DashCourse() {
     <section className="container course-section">
       {/* TITLE */}
       <div className="text-center my-4">
-        <h2 className=" course-title">
+        <h2 className="course-title">
           My <span>Courses</span>
         </h2>
-
-        <p className="text-muted">Choose a program and start learning.</p>
+        <p className="text-muted">Your enrolled academic program.</p>
       </div>
 
       {/* LOADING */}
       {loading && (
         <div className="text-center py-5">
           <div className="spinner-border text-danger"></div>
-          <p className="text-muted mt-2">Loading courses...</p>
+          <p className="text-muted mt-2">Loading your courses...</p>
         </div>
       )}
 
@@ -106,10 +126,10 @@ function DashCourse() {
       )}
 
       {/* COURSES */}
-      {!loading && !error && (
-        <div className="row g-4">
+      {!loading && !error && courses.length > 0 && (
+        <div className="row g-4 justify-content-center">
           {courses.map((course) => (
-            <div className="col-12 col-md-6 col-xl-4" key={course.course_id}>
+            <div className="col-12 col-md-8 col-xl-6" key={course.course_id}>
               <div className="course-card h-100 p-4">
                 <div className="course-icon">
                   <i className={`bi ${getIcon(course.title)}`}></i>
@@ -119,11 +139,25 @@ function DashCourse() {
 
                 <p className="text-muted small">{course.description}</p>
 
+                <div className="mb-3">
+                  {course.payment_status === "paid" ? (
+                    <span className="badge bg-success">
+                      <i className="bi bi-check-circle me-1"></i>
+                      Paid
+                    </span>
+                  ) : (
+                    <span className="badge bg-warning text-dark">
+                      <i className="bi bi-clock me-1"></i>
+                      Payment Pending
+                    </span>
+                  )}
+                </div>
+
                 <button
                   className="btn access-btn w-100 mt-2"
                   onClick={() => openCourse(course)}
                 >
-              Show more
+                  Show more
                   <i className="bi bi-arrow-right ms-2"></i>
                 </button>
               </div>
@@ -136,7 +170,7 @@ function DashCourse() {
       {!loading && !error && courses.length === 0 && (
         <div className="text-center text-muted py-5">
           <i className="bi bi-book fs-1"></i>
-          <p className="mt-2">No courses found.</p>
+          <p className="mt-2">You are not enrolled in any courses yet.</p>
         </div>
       )}
 
@@ -145,11 +179,9 @@ function DashCourse() {
 
       {/* SLIDE PANEL */}
       <div className={`course-panel ${selected ? "show" : ""}`}>
-        {/* PANEL HEADER */}
         <div className="d-flex justify-content-between align-items-center mb-4">
           <div>
             <small className="text-muted">Course Program</small>
-
             <h5 className="fw-bold mb-0">{selected?.title}</h5>
           </div>
 
@@ -164,14 +196,12 @@ function DashCourse() {
 
         <h6 className="fw-bold mb-3">Courses</h6>
 
-        {/* MINOR LOADING */}
         {minorLoading && (
           <div className="text-center py-4">
             <div className="spinner-border text-danger"></div>
           </div>
         )}
 
-        {/* MINOR COURSES */}
         {!minorLoading && (
           <div className="d-flex flex-column gap-2">
             {minorCourses.map((course, index) => (
@@ -182,7 +212,6 @@ function DashCourse() {
 
                 <div>
                   <h6>{course.title}</h6>
-
                   <p>{course.description}</p>
 
                   <button className="btn btn-sm minor-btn">

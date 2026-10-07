@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Scholarship.css";
 import Scho from "../../assets/Scho.PNG"
 function Scholarship() {
@@ -103,10 +104,10 @@ function Scholarship() {
 
             {/* ACTION BUTTON */}
             <div className="mt-4">
-              <button className="scholarship-btn">
+              <Link to="/Scholarship" className="scholarship-btn text-decoration-none ">
                 Apply for Scholarship
                 <i className="bi bi-arrow-right ms-2"></i>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

@@ -29,7 +29,7 @@ function MainHeader() {
         </div>
 
         {/* Navigation */}
-        <div className="collapse navbar-collapse" id="mainNavbar">
+        <div className=" collapse navbar-collapse" id="mainNavbar">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
             <li className="nav-item">
               <Link className="nav-link " to="/">

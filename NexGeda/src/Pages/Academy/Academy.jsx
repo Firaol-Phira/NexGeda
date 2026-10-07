@@ -1,16 +1,49 @@
 import React, { useEffect, useState } from "react";
 import "./Academy.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const API = "http://localhost:2123";
 
 function Academy() {
+
   const [courses, setCourses] = useState([]);
   const [selected, setSelected] = useState(null);
   const [minorCourses, setMinorCourses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [minorLoading, setMinorLoading] = useState(false);
+const navigate = useNavigate();
 
+const handlePayNow = async (courseId) => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    navigate(`/SignIn?redirect=/Payment/${courseId}`);
+    return;
+  }
+
+  try {
+    // 1. Save the selected course to the database before navigating
+    const response = await fetch(`${API}/api/user/course`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ courseId }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to save course selection");
+    }
+
+    // 2. Navigate to payment page after successful save
+    navigate(`/Payment/${courseId}`);
+  } catch (error) {
+    console.error("Error saving course:", error);
+    alert("Could not save your course selection. Please try again.");
+  }
+};
   // Get major courses and prices
   useEffect(() => {
     fetch(`${API}/api/courses`)
@@ -49,6 +82,8 @@ function Academy() {
     if (title.includes("UI/UX")) return "bi-bezier2";
 
     return "bi-book";
+
+    
   };
 
   return (
@@ -141,17 +176,20 @@ function Academy() {
                         <div>
                           <small>Material + Class</small>
                           <strong>
-                            {Number(course.class_price).toLocaleString()}{" "} Birr
+                            {Number(course.class_price).toLocaleString()} Birr
                           </strong>
                         </div>
 
                         <i className="bi bi-person-video3"></i>
                       </div>
                       {/* PAY NOW */}
-                      <Link to="/payment" className="pay-now-btn">
+                      <button
+                        className="pay-now-btn"
+                        onClick={() => handlePayNow(course.course_id)}
+                      >
                         Pay Now
                         <i className="bi bi-credit-card ms-2"></i>
-                      </Link>
+                      </button>
                     </div>
                   </div>
                 </div>

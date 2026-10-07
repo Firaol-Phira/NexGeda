@@ -1,6 +1,6 @@
 import React from "react";
 import "./Why.css";
-
+import { Link } from "react-router-dom";
 const reasons = [
   {
     icon: "bi-lightning-charge-fill",
@@ -127,10 +127,10 @@ function WhyNexGeda() {
             <h4>Build your future with NexGeda.</h4>
           </div>
 
-          <a href="#Courses" className="why-btn">
+          <Link to="/Academy" className="why-btn">
             Explore Courses
             <i className="bi bi-arrow-right"></i>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 "react-router-dom";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { BASE_URL } from "../../App";
 import "./SignUp.css"; // Dedicated styles for this theme configuration
 
 function SignUp() {
@@ -23,7 +24,7 @@ function SignUp() {
     setSuccessMessage("");
 
     try {
-      const response = await fetch("http://localhost:2123/api/auth/signup", {
+      const response = await fetch(`${BASE_URL}/api/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

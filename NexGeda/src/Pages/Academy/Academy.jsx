@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./Academy.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../../App";
 
-const API = "http://localhost:2123";
 
 function Academy() {
-
+const API = `${BASE_URL}`;
   const [courses, setCourses] = useState([]);
   const [selected, setSelected] = useState(null);
   const [minorCourses, setMinorCourses] = useState([]);
@@ -129,7 +129,7 @@ const handlePayNow = async (courseId) => {
                 <div className="row align-items-center g-4">
                   {/* COURSE INFORMATION */}
                   <div className="col-12 col-md-7">
-                    <div className="course-section">
+                    <div className="coursesection">
                       <div className="program-top">
                         <div className="program-icon">
                           <i className={`bi ${getIcon(course.title)}`}></i>

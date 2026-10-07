@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BASE_URL } from "../../App";
 import "./Founder.css";
 import { Link } from "react-router-dom";
 function Founder() {
@@ -7,7 +8,8 @@ function Founder() {
   useEffect(() => {
     const fetchFounder = async () => {
       try {
-        const response = await fetch("http://localhost:2123/api/founder");
+        const response = await fetch(`${BASE_URL}/api/founder`,
+        );
 
         if (!response.ok) {
           throw new Error("Failed to fetch founder");

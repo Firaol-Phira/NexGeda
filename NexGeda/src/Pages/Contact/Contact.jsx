@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import { Link, useNavigate } from "react-router-dom";
+import { BASE_URL } from "../../App";
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -26,7 +27,7 @@ function Contact() {
     setStatus("");
 
     try {
-      const response = await fetch("http://localhost:2123/api/contact", {
+      const response = await fetch(`${BASE_URL}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

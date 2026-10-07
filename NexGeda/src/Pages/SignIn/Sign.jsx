@@ -4,7 +4,7 @@ import { Link,
    useSearchParams} from "react-router-dom"; // Added useNavigate for dashboard routing
 import "./Sign.css"; // Import the cleaned-up global style rules
 import NG from "../../assets/NG.jpg";
-
+import { BASE_URL } from "../../App";
 function Sign() {
   const [searchParams] = useSearchParams();
  
@@ -24,7 +24,7 @@ function Sign() {
     setErrorMessage(""); // Clear old warnings on submission retry
 
     try {
-      const response = await fetch("http://localhost:2123/api/auth/signin", {
+      const response = await fetch(`${BASE_URL}/api/auth/signin`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +51,7 @@ if (response.ok) {
       const courseId = paymentMatch[1];
 
       try {
-        await fetch("http://localhost:2123/api/user/course", {
+        await fetch(`${BASE_URL}/api/user/course`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

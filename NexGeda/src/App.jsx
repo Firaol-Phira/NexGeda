@@ -1,6 +1,7 @@
 import react, { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 // Layout Wrappers
 import MainLayout from "./Layouts/MainLayout/MainLayout.jsx";
 import AuthLayout from "./Layouts/AuthoLayout/AuthoLayout.jsx";
@@ -17,6 +18,9 @@ import Academy from './Pages/Academy/Academy.jsx';
 import Payment from './Components/Payment/Payment.jsx';
 import Management from './Components/Manager/Management.jsx';
 import DashCourse from './Components/DashCourse/DashCourse.jsx';
+
+// Add export right here at the top of App.jsx
+export const BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:2123";
 
 
 function App() {

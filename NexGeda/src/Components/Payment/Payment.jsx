@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Payment.css";
 import { Link } from "react-router-dom";
-const API = "http://localhost:2123";
+
 
 function Payment() {
+  const API = `${BASE_URL}`;
   const { courseId } = useParams();
 
   const [course, setCourse] = useState(null);

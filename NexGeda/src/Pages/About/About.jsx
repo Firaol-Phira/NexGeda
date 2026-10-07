@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./About.css";
-
+import { BASE_URL } from "../../App";
 function About() {
   const [founder, setFounder] = useState(null);
 
   useEffect(() => {
     const fetchFounder = async () => {
       try {
-        const response = await fetch("http://localhost:2123/api/founder");
+        const response = await fetch(`${BASE_URL}/api/founder`);
 
         if (!response.ok) {
           throw new Error("Failed to fetch founder");

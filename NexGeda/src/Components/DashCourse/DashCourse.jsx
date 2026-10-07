@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./DashCourse.css";
+import { BASE_URL } from "../../App";
 
-const API = "http://localhost:2123";
 
 function DashCourse() {
+  const API = `${BASE_URL}`;
   const [courses, setCourses] = useState([]);
   const [selected, setSelected] = useState(null);
   const [minorCourses, setMinorCourses] = useState([]);

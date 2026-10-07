@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Management.css";
+import { BASE_URL } from "../../App";
 
-const API = "http://localhost:2123";
 
 function Management() {
+  const API = `${BASE_URL}`;
   const [students, setStudents] = useState([]);
   const [loading, setLoading] = useState(true);
 

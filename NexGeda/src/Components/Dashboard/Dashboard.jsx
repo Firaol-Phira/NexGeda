@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Dashboard.css";
 import logo from "../../assets/NexGedalogo2-04.png";
+import { BASE_URL } from "../../App";
 
 function Dashboard() {
   const location = useLocation();
@@ -39,7 +40,7 @@ function Dashboard() {
 
     const fetchStudents = async () => {
       try {
-        const response = "http://localhost:2123/api/students";
+        const response =`${BASE_URL}/api/students`;
         const res = await fetch(response);
 
         if (!res.ok) {
@@ -88,7 +89,7 @@ function Dashboard() {
 
     try {
       const response = await fetch(
-        "http://localhost:2123/api/user/update-avatar",
+        `${BASE_URL}/api/user/update-avatar`,
         {
           method: "POST",
           body: formData,
@@ -195,27 +196,25 @@ function Dashboard() {
         </div>
 
         <nav className="nav nav-pills flex-column gap-1 px-2">
-          {menuItems
-          
-            .map((item) => {
-              const active = location.pathname === item.path;
+          {menuItems.map((item) => {
+            const active = location.pathname === item.path;
 
-              return (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  title={item.name}
-                  className={`nav-link d-flex align-items-center justify-content-center justify-content-lg-start gap-lg-3 ${
-                    active
-                      ? "bg-danger bg-opacity-10 text-danger fw-semibold"
-                      : "text-secondary"
-                  }`}
-                >
-                  <i className={`bi ${item.icon} fs-5`}></i>
-                  <span className="d-none d-lg-inline">{item.name}</span>
-                </Link>
-              );
-            })}
+            return (
+              <Link
+                key={item.name}
+                to={item.path}
+                title={item.name}
+                className={`nav-link d-flex align-items-center justify-content-center justify-content-lg-start gap-lg-3 ${
+                  active
+                    ? "bg-danger bg-opacity-10 text-danger fw-semibold"
+                    : "text-secondary"
+                }`}
+              >
+                <i className={`bi ${item.icon} fs-5`}></i>
+                <span className="d-none d-lg-inline">{item.name}</span>
+              </Link>
+            );
+          })}
         </nav>
       </aside>
 
@@ -249,7 +248,7 @@ function Dashboard() {
                       src={
                         currentUser.avatar.startsWith("http")
                           ? currentUser.avatar
-                          : `http://localhost:2123/${currentUser.avatar}`
+                          :` ${BASE_URL}/${currentUser.avatar}`
                       }
                       alt="User Profile"
                       className="w-100 h-100 object-fit-cover"

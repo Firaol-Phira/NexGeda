@@ -31,7 +31,7 @@ function ResetPassword(){
                 <div className="avatar-circle av-4"></div>
               </div>
               <span className="fw-medium text-light opacity-75">
-                Join 40,000+ users
+                Join 40+ users
               </span>
             </div>
           </div>

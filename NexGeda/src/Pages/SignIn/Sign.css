@@ -1,6 +1,9 @@
 /* Brand Design Identity Elements */
 .nexgeda-login-container {
+    padding-top: 75px;  
+
   background-color: #F5F5F5; /* NexGeda background black tone */
+  overflow: hidden ;
 }
 
 /* Base element custom state rules */

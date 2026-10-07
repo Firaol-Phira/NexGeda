@@ -1,9 +1,23 @@
 .navbar {
   background: #0b0b0b;
   border-bottom: 1px solid #292929;
+ padding: 0px !important;
 
 }
+.navbar-brand {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.navbar-collapse{
 
+    padding: 0px !important;
+  margin: 0px !important;
+}
+.sig{
+
+    padding: 0px !important;
+  margin: 0px !important;
+}
 .logo {
   width: 9rem;
 }

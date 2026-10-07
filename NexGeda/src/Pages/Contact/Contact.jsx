@@ -258,19 +258,9 @@ function Contact() {
           </div>
         </div>
 
-        {/* BOTTOM CTA */}
-        <div className="contact-cta">
-          <div>
-            <span>READY TO BEGIN?</span>
-
-            <h3>Your journey starts with a conversation.</h3>
-          </div>
-
-          <Link to="/" className="contact-cta-button">
-            Explore Courses
-            <i className="bi bi-arrow-right"></i>
-          </Link>
-        </div>
+      
+     
+     
       </div>
     </section>
   );

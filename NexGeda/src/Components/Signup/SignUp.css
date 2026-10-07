@@ -3,7 +3,11 @@
   color: #1a1a1a;
   letter-spacing: -0.5px;
 }
+.nexgeda-page-wrapper{
+  padding-top: 75px;  
 
+  overflow: hidden;
+}
 /* Custom Text Resizer Elements */
 .fs-7 {
   font-size: 0.8rem !important;

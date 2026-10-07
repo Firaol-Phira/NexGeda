@@ -20,3 +20,14 @@ html {
   /* Adjust this value to equal your navbar's height + your desired shadow gap */
   scroll-padding-top: 70px; 
 }
+html, body {
+height: 100vh;
+  margin: 0;
+}
+
+/* Make your main section fill at least the screen height */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: auto; /* Allows normal page scrolling globally */
+}

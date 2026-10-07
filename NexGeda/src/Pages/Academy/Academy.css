@@ -11,6 +11,7 @@
 }
 
 .academy-label {
+  padding-top: 25px;
   color: #d71920;
   font-size: 13px;
   font-weight: 700;
@@ -44,7 +45,7 @@
 /* PROGRAMS */
 
 .academy-programs {
-  margin-top: 90px;
+  margin-top: 70px;
 }
 
 .academy-programs h3,
@@ -60,12 +61,12 @@
 .program-list {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 17px;
 }
 
 .program-card {
   padding: 30px;
-  border: 1px solid #ddd;
+  border: 1px solid #949191;
   border-radius: 18px;
   background: #fff;
 }
@@ -100,7 +101,7 @@
 }
 
 .program-card h5 {
-  margin-top: 25px;
+  margin-top: 5px;
   font-weight: 700;
 }
 

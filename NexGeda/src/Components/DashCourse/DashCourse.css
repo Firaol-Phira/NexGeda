@@ -1,8 +1,18 @@
-.course-section {
-  width: 100%;
- margin-bottom: 50px;
+.course-section { 
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 95px;
+    padding-bottom: 70px;
+  width: 90%;
+
+
 }
 
+.mayc{
+ padding-bottom: 50px;
+}
 .course-title {
   font-size: 28px;
   font-weight: 700;
@@ -13,6 +23,7 @@
 }
 
 .course-card {
+
   background: #fff;
   border: 1px solid #eee;
   border-radius: 14px;

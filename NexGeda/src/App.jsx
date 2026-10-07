@@ -13,10 +13,10 @@ import Scholarship from './Components/ScholarshipPage/Scholarship.jsx';
 import Dashboard from './Components/Dashboard/Dashboard.jsx';
 import About from './Pages/About/About.jsx';
 import Contact from './Pages/Contact/Contact.jsx';
-import Course from './Components/DashCourse/DashCourse.jsx';
 import Academy from './Pages/Academy/Academy.jsx';
 import Payment from './Components/Payment/Payment.jsx';
 import Management from './Components/Manager/Management.jsx';
+import DashCourse from './Components/DashCourse/DashCourse.jsx';
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
           <Route path="/Signin" element={<SignIn />} />
           <Route path="/ForgotePassword" element={<ResetPassword />} />
           <Route path="/SignUp" element={<SignUp />} />
-          <Route path="/DashCourse" element={<Course />} />
+          <Route path="/DashCourse" element={<DashCourse/>} />
           <Route path="/Management" element={<Management />} />
         </Route>
         <Route path="/dashboard" element={<Dashboard />} />

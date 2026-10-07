@@ -127,7 +127,7 @@ function DashCourse() {
 
       {/* COURSES */}
       {!loading && !error && courses.length > 0 && (
-        <div className="row g-4 justify-content-center">
+        <div className="mayc row g-4 justify-content-center">
           {courses.map((course) => (
             <div className="col-12 col-md-8 col-xl-6" key={course.course_id}>
               <div className="course-card h-100 p-4">

@@ -9,7 +9,7 @@ function MainHeader() {
           <img src={logo} alt="Logo" />
         </a>
 
-        <div className="d-flex align-items-center gap-2 order-lg-last">
+        <div className="sig d-flex align-items-center gap-2 order-lg-last">
           <Link to="/signin" className="signin-btn px-3 order-1 order-lg-last">
             Sign In
           </Link>

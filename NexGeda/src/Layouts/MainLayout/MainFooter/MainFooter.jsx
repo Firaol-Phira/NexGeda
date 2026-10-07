@@ -64,7 +64,7 @@ function MainFooter() {
             </h6>
             <div className="d-flex gap-3 fs-5 footer-social-matrix mb-3">
               <a
-                href="https://linkedin.com"
+                href="https://facebook.com"
                 target="_blank"
                 rel="noreferrer"
                 title="LinkedIn"
@@ -72,7 +72,7 @@ function MainFooter() {
                 <i className="bi bi-facebook fs-4"></i>
               </a>
               <a
-                href="https://youtube.com"
+                href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
                 title="YouTube"
@@ -80,7 +80,7 @@ function MainFooter() {
                 <i className="bi bi-instagram fs-4"></i>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://telegram.com"
                 target="_blank"
                 rel="noreferrer"
                 title="Instagram"
@@ -88,7 +88,7 @@ function MainFooter() {
                 <i className="bi bi-telegram fs-4"></i>
               </a>
               <a
-                href="https://github.com"
+                href="https://tiktok.com"
                 target="_blank"
                 rel="noreferrer"
                 title="GitHub"

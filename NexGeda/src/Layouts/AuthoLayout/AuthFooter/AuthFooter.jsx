@@ -4,7 +4,7 @@ import "./AuthFooter.css";
 
 function AuthFooter() {
   return (
-    <footer className="auth-footer d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 px-3 px-md-5 py-4 border-top">
+    <footer className="auth-footer d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 px-3 px-md-5 py-4">
       <div className="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center p-0 gap-3">
         {/* Left Side: Brand & Legal Hyperlinks Layout */}
         <div className="d-flex flex-column flex-sm-row align-items-center gap-2 gap-sm-4 text-center text-sm-start">
@@ -39,7 +39,7 @@ function AuthFooter() {
             <i className="bi bi-instagram fs-4"></i>
           </a>
           <a
-            href="https://tiktok.com"
+            href="https://telegram.com"
             target="_blank"
             rel="noreferrer"
             title="TikTok"
@@ -47,7 +47,7 @@ function AuthFooter() {
             <i className="bi bi-telegram fs-4"></i>
           </a>
           <a
-            href="https://youtube.com"
+            href="https://tiktok.com"
             target="_blank"
             rel="noreferrer"
             title="YouTube"

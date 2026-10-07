@@ -118,10 +118,7 @@ const handlePayNow = async (courseId) => {
             <div className="spinner-border text-danger"></div>
           </div>
         ) : (
-          /*
-           * IMPORTANT:
-           * program-list stays vertical at every screen size.
-           */
+         
           <div className="program-list">
             {courses.map((course, index) => (
               /*
@@ -248,7 +245,7 @@ const handlePayNow = async (courseId) => {
 
           <p>Register with NexGeda and start learning today.</p>
 
-          <Link to="/register" className="register-btn">
+          <Link to="/Signup" className="register-btn">
             Register Now
             <i className="bi bi-arrow-right ms-2"></i>
           </Link>

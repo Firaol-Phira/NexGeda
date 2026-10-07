@@ -234,10 +234,7 @@ function About() {
 
           <p>Learn. Build. Grow with NexGeda.</p>
 
-          <button className="btn cta-button">
-            Explore Our Courses
-            <i className="bi bi-arrow-right ms-2"></i>
-          </button>
+        
         </div>
       </div>
     </section>

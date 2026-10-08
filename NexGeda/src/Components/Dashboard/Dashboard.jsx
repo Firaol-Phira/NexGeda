@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Dashboard.css";
 import logo from "../../assets/NexGedalogo2-04.png";
-import { BASE_URL } from "../../App";
+import { BASE_URL } from "../../config";
 
 function Dashboard() {
   const location = useLocation();

@@ -19,10 +19,6 @@ import Payment from './Components/Payment/Payment.jsx';
 import Management from './Components/Manager/Management.jsx';
 import DashCourse from './Components/DashCourse/DashCourse.jsx';
 
-// Add export right here at the top of App.jsx
-export const BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:2123";
-
-
 function App() {
   return (
     <BrowserRouter>

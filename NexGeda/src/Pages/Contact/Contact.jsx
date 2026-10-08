@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import { Link, useNavigate } from "react-router-dom";
-import { BASE_URL } from "../../App";
+import { BASE_URL } from "../../config";
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",

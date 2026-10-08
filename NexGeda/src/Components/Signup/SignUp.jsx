@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 "react-router-dom";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { BASE_URL } from "../../App";
+import { BASE_URL } from "../../config";
 import "./SignUp.css"; // Dedicated styles for this theme configuration
 
 function SignUp() {

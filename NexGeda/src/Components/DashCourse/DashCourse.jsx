@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./DashCourse.css";
-import { BASE_URL } from "../../App";
+import { BASE_URL } from "../../config";
 
 
 function DashCourse() {

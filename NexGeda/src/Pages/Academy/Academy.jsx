@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Academy.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { BASE_URL } from "../../App";
+import { BASE_URL } from "../../config";
 
 
 function Academy() {

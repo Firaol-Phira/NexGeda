@@ -4,7 +4,7 @@ import { Link,
    useSearchParams} from "react-router-dom"; // Added useNavigate for dashboard routing
 import "./Sign.css"; // Import the cleaned-up global style rules
 import NG from "../../assets/NG.jpg";
-import { BASE_URL } from "../../App";
+import { BASE_URL } from "../../config";
 function Sign() {
   const [searchParams] = useSearchParams();
  

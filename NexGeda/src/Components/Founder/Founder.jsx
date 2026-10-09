@@ -60,7 +60,13 @@ function Founder() {
                   <div className="col-12 col-md-4 text-center">
                     <div className="home-founder-image">
                       {founder?.avatar ? (
-                        <img src={founder.avatar} alt={founder.name} />
+                        <img
+                          src={
+                            founder.avatar?.startsWith("http")
+                              ? founder.avatar
+                              : `${BASE_URL}/${founder.avatar}`
+                          }
+                        />
                       ) : (
                         <i className="bi bi-person"></i>
                       )}

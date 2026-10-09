@@ -188,7 +188,13 @@ function About() {
                   <div className="col-12 col-md-4 text-center">
                     <div className="founder-image">
                       {founder?.avatar ? (
-                        <img src={founder.avatar} alt={founder.name} />
+                        <img
+                          src={
+                            founder.avatar?.startsWith("http")
+                              ? founder.avatar
+                              : `${BASE_URL}/${founder.avatar}`
+                          }
+                        />
                       ) : (
                         <i className="bi bi-person"></i>
                       )}
@@ -233,8 +239,6 @@ function About() {
           </h2>
 
           <p>Learn. Build. Grow with NexGeda.</p>
-
-        
         </div>
       </div>
     </section>

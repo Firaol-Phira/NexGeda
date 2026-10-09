@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import "./Dashboard.css";
 import logo from "../../assets/NexGedalogo2-04.png";
 import { BASE_URL } from "../../config";
-
+import { uploadToCloudinary } from "../../utils/cloudinary";
 function Dashboard() {
   const location = useLocation();
 
@@ -40,7 +40,7 @@ function Dashboard() {
 
     const fetchStudents = async () => {
       try {
-        const response =`${BASE_URL}/api/students`;
+        const response = `${BASE_URL}/api/students`;
         const res = await fetch(response);
 
         if (!res.ok) {
@@ -88,16 +88,13 @@ function Dashboard() {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch(
-        `${BASE_URL}/api/user/update-avatar`,
-        {
-          method: "POST",
-          body: formData,
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+      const response = await fetch(`${BASE_URL}/api/user/update-avatar`, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-      );
+      });
 
       const data = await response.json();
 
@@ -123,6 +120,47 @@ function Dashboard() {
     }
   };
 
+  //cloude
+  const handleAvatarCloudinary = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    if (file.size > 5 * 1024 * 1024) {
+      alert("Image must be smaller than 5MB.");
+      return;
+    }
+
+    const token = localStorage.getItem("token");
+
+    try {
+      // 1. Upload to Cloudinary
+      const avatarUrl = await uploadToCloudinary(file);
+
+      // 2. Save only the URL in your database
+      const response = await fetch(`${BASE_URL}/api/user/update-avatar-url`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ avatar: avatarUrl }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        const updatedUser = { ...currentUser, avatar: avatarUrl };
+        localStorage.setItem("user", JSON.stringify(updatedUser));
+        setCurrentUser(updatedUser);
+        alert("Profile picture updated successfully!");
+      } else {
+        alert(data.message || "Could not update profile picture.");
+      }
+    } catch (error) {
+      console.error("Avatar upload error:", error);
+      alert("Could not update profile picture. Please try again.");
+    }
+  };
   // ==============================
   // INITIALS
   // ==============================
@@ -179,7 +217,7 @@ function Dashboard() {
       icon: "bi-trophy-fill",
       path: "/dashboard/leaderboard",
     },
- 
+
     {
       name: "Settings",
       icon: "bi-gear-fill",
@@ -248,7 +286,7 @@ function Dashboard() {
                       src={
                         currentUser.avatar.startsWith("http")
                           ? currentUser.avatar
-                          :` ${BASE_URL}/${currentUser.avatar}`
+                          : `${BASE_URL}/${currentUser.avatar}`
                       }
                       alt="User Profile"
                       className="w-100 h-100 object-fit-cover"
@@ -274,7 +312,7 @@ function Dashboard() {
                 type="file"
                 accept="image/*"
                 className="d-none"
-                onChange={handleAvatarFileChange}
+                onChange={handleAvatarCloudinary}
               />
 
               <div className="d-none d-md-flex flex-column text-start lh-1">
@@ -407,7 +445,11 @@ function Dashboard() {
                 <div className="card h-100 bg-white border-0 shadow-sm rounded-3 p-4 text-center">
                   <div className="position-relative mx-auto mb-3">
                     <img
-                      src={student.avatar}
+                      src={
+                        student.avatar?.startsWith("http")
+                          ? student.avatar
+                          : `${BASE_URL}/${student.avatar}`
+                      }
                       alt={student.name}
                       className="rounded-circle border border-3 border-light object-fit-cover"
                       style={{ width: "90px", height: "90px" }}
@@ -460,5 +502,4 @@ function Dashboard() {
     </div>
   );
 }
-
 export default Dashboard;
